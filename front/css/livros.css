@@ -1,0 +1,60 @@
+@import url("style.css");
+
+.CardLivro {
+    background: linear-gradient(
+        180deg,
+        var(--RoxoPastel),
+        var(--Branco)
+    );
+
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ImagemLivro {
+    height: 200px;
+    background-color: var(--CinzaClaro);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.InfoLivro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.TituloLivro {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.AutorLivro {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.StatusLivro {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* STATUS */
+.StatusLendo {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.StatusLido {
+    background-color: #dcfce7;
+    color: #14532d;
+}
+
+.StatusAbandonado {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
