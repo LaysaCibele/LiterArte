@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>LiterArte | Seu espaço literário</title>
+    <title>LiterArte | Editar Perfil</title>
     <link rel="stylesheet" href="/front/css/meu-perfil.css">
 </head>
 <body>
@@ -26,44 +26,42 @@
     <section class="CardPerfil">
 
         <header class="TopoPerfil">
-
-            <div class="InfoPerfilTopo">
-                <h1>Meu Perfil</h1>
-                <p class="EmailUsuario">laysa@gmail.com</p>
-            </div>
+            <h1>Editar Perfil</h1>
         </header>
 
-        <div class="DadosPerfil">
+        <form class="FormularioPerfil">
 
-            <div class="CampoPerfil">
-                <span class="LabelPerfil">Nome</span>
-                <span class="ValorPerfil">Laysa</span>
+            <label>
+                Nome
+                <input type="text" value="Laysa">
+            </label>
+
+            <label>
+                Livro Preferido
+                <input type="text" placeholder="Ex: Dom Casmurro">
+            </label>
+
+            <label>
+                Gêneros Favoritos
+                <input type="text" placeholder="Romance, Ficção, Drama">
+            </label>
+
+            <label>
+                Autores Favoritos
+                <input type="text" placeholder="Machado de Assis, Clarice Lispector">
+            </label>
+
+            <div class="AcoesFormulario">
+                <a href="meu-perfil.html" class="BotaoPrimario">Salvar</a>
+                <a href="meu-perfil.html" class="BotaoSecundario">Cancelar</a>
             </div>
 
-            <div class="CampoPerfil">
-                <span class="LabelPerfil">Livro Preferido</span>
-                <span class="ValorPerfil">Não informado</span>
-            </div>
-
-            <div class="CampoPerfil">
-                <span class="LabelPerfil">Gêneros Favoritos</span>
-                <span class="ValorPerfil">Não informado</span>
-            </div>
-
-            <div class="CampoPerfil">
-                <span class="LabelPerfil">Autores Favoritos</span>
-                <span class="ValorPerfil">Não informado</span>
-            </div>
-
-        </div>
-
-        <div class="AcoesPerfil">
-            <a href="editar-perfil.html" class="BotaoPrimario">Editar Perfil</a>
-        </div>
+        </form>
 
     </section>
 
 </main>
+
 
 
     <footer class="RodapePrincipal">
