@@ -1,5 +1,62 @@
 @import url("style.css");
 
+
+/*Menu*/
+.MenuHamburguer {
+    position: relative;
+}
+
+.botaoBurguer{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.botaoBurguer img {
+    width: 32px; 
+    display: block;
+}
+
+.ListaMenu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    
+    background-color: var(--RoxoMedio);
+    padding: 20px;
+    width: 200px;
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    flex-direction: column; 
+    gap: 15px;
+    z-index: 1000; 
+}
+
+.ListaMenu.aberto {
+    display: flex; 
+}
+
+.ListaMenu li{
+    list-style: none;
+}
+
+.ListaMenu li a {
+    color: var(--Branco);
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+}
+
+.ListaMenu li a:hover {
+    color: var(--RoxoPastel);
+}
+
+
 .CardLivro {
     background: linear-gradient(
         180deg,

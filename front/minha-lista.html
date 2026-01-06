@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Meus Livros | LiterArte</title>
-    <link rel="stylesheet" href="css/livros.css">
+    <link rel="stylesheet" href="css/minha-lista.css">
 </head>
 <body>
 
     <header class="CabecalhoPrincipal">
         <div class="LogoSite"><a href="index.html" class="LogoSite">LiterArte</a></div>
+
+        <nav class="MenuHamburguer">
+            <button class="botaoBurguer"><img src="assets/icones/menu.png"></button>
+            <ul class="ListaMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="meu-perfil.html">Meu Perfil</a></li>
+                <li><a href="minha-lista.html">Minha Lista</a></li>
+                <li><a href="login.html">Sair</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="ConteudoPrincipal">
 
         <section class="SecaoLivros">
-            <h1 class="TituloSecao">Minha Biblioteca</h1>
+            <h1 class="TituloSecao">Minha Lista de Leitura</h1>
 
             <div class="ListaLivros">
 
@@ -33,5 +43,6 @@
 
     </main>
 
+     <script src="/front/scripts/scripts.js"></script>
 </body>
 </html>
