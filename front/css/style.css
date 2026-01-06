@@ -130,13 +130,54 @@ body {
 .TituloSecao {
     font-size: 1.75rem;
     margin-bottom: 24px;
+    text-align: center;
 }
+
+
+/*Cards de Livros*/
 
 .ListaLivros {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
 }
+
+.CardLivro {
+    background: linear-gradient(
+        180deg,
+        var(--RoxoMedio),
+        var(--Branco)
+    );
+
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ImagemLivro img{
+    height: 300px;
+    background-color: var(--CinzaClaro);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.InfoLivro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.TituloLivro {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.AutorLivro {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+
 
 /* Rodapé*/
 .RodapePrincipal {
