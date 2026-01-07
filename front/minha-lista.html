@@ -22,27 +22,63 @@
         </nav>
     </header>
 
+    
+
     <main class="ConteudoPrincipal">
+        <h1 class="TituloSecao">Minha Lista de Leitura</h1>
+        <section class="ListaLeitura">
 
-        <section class="SecaoLivros">
-            <h1 class="TituloSecao">Minha Lista de Leitura</h1>
+        <article class="CardListaLivro">
+            <div class="CapaLivro"></div>
 
-            <div class="ListaLivros">
+            <div class="InfoListaLivro">
+                <h2>Dom Casmurro</h2>
+                <p class="Autor">Machado de Assis</p>
 
-                <article class="CardLivro">
-                    <div class="ImagemLivro"></div>
+                <select class="StatusLeitura">
+                    <option>Quero Ler</option>
+                    <option>Lendo</option>
+                    <option selected>Lido</option>
+                </select>
 
-                    <div class="InfoLivro">
-                        <h2 class="TituloLivro">Título do Livro</h2>
-                        <p class="AutorLivro">Autor</p>
-                        <span class="StatusLivro StatusLendo">Lendo</span>
-                    </div>
-                </article>
+                <textarea placeholder="Adicione suas anotações..."></textarea>
 
+                <div class="AcoesLivro">
+                    <button class="Salvar">Salvar</button>
+                    <button class="Cancelar">Cancelar</button>
+                </div>
+
+                <button class="Remover">Remover</button>
             </div>
-        </section>
+        </article>
+
+    </section>
+
+    <!-- RESUMO -->
+    <section class="ResumoLeitura">
+        <div class="ResumoCard">
+            <span>Quero Ler</span>
+            <strong>0</strong>
+        </div>
+
+        <div class="ResumoCard lendo">
+            <span>Lendo</span>
+            <strong>0</strong>
+        </div>
+
+        <div class="ResumoCard lido">
+            <span>Lidos</span>
+            <strong>1</strong>
+        </div>
+    </section>
+
 
     </main>
+
+     <footer class="RodapePrincipal">
+        <p>© 2026 — LiterArte - Todos os direitos reservados.</p>
+        <p>Desenvolvido com 💜 para amantes da literatura.</p>
+    </footer>
 
      <script src="/front/scripts/scripts.js"></script>
 </body>

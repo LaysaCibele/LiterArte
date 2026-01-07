@@ -71,61 +71,136 @@
 }
 
 
-.CardLivro {
+/*Lista de Leitura*/
+
+.ListaLeitura {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.CardListaLivro {
+    background-color: var(--Branco);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.CapaLivro {
+    width: 120px;
+    height: 180px;
+    border-radius: 12px;
     background: linear-gradient(
         180deg,
-        var(--RoxoPastel),
-        var(--Branco)
+        var(--RoxoClaro),
+        var(--RoxoMedio)
     );
-
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.ImagemLivro {
-    height: 200px;
-    background-color: var(--CinzaClaro);
-    border-radius: 12px;
-    margin-bottom: 16px;
-}
 
-.InfoLivro {
+.InfoListaLivro {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
 }
 
-.TituloLivro {
-    font-size: 1.1rem;
-    font-weight: bold;
+.InfoListaLivro h2 {
+    font-size: 1.4rem;
+    color: var(--RoxoMedio);
 }
 
-.AutorLivro {
-    font-size: 0.9rem;
+.Autor {
+    font-size: 0.95rem;
     color: #6b7280;
 }
 
-.StatusLivro {
-    align-self: flex-start;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.75rem;
+.StatusLeitura {
+    width: fit-content;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: #dcfce7;
     font-weight: bold;
+    color: #166534;
 }
 
-/* STATUS */
-.StatusLendo {
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--CinzaClaro);
+    resize: none;
+    font-family: inherit;
+}
+
+
+.AcoesLivro {
+    display: flex;
+    gap: 12px;
+}
+
+.Salvar {
+    background-color: var(--RoxoMedio);
+    color: var(--Branco);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Cancelar {
+    background-color: var(--CinzaClaro);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.Remover {
+    width: fit-content;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ResumoLeitura {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ResumoCard {
+    background-color: #f3f4f6;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.ResumoCard strong {
+    font-size: 2rem;
+    display: block;
+    margin-top: 6px;
+}
+
+.ResumoCard.lendo {
     background-color: #dbeafe;
     color: #1e40af;
 }
 
-.StatusLido {
+.ResumoCard.lido {
     background-color: #dcfce7;
-    color: #14532d;
+    color: #166534;
 }
 
-.StatusQueroLer {
-    background-color: #cdc89b;
-    color: #dfe620;
-}
+
