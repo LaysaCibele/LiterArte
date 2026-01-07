@@ -98,8 +98,22 @@ body {
     text-align: center;
     font-weight: bold;
     display: block;
-    padding: 5px 0;
+    padding: 10px 0;
+
+    display: flex;       
+    align-items: center;
+    justify-content: flex-start; 
+    padding-left: 10px;
+    gap: 15px;
+    
 }
+
+.ListaMenu li a img{
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 
 .ListaMenu li a:hover {
     color: var(--RoxoPastel);
