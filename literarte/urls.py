@@ -22,14 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('', include('users.urls')),
-    
-    #path('cadastro/', cadastro, name='cadastro'), essa era a antiga rota de cadastro
-    path('DomCasmurro/', DomCasmurro, name='DomCasmurro'),
-    #path('editar-perfil/', editar_perfil, name='editar_perfil' ),
-    path('login/', login, name='login'),
-    #path('meu-perfil/', meu_perfil, name='meu_perfil'),
+    path('', index, name='index'), #Minha home
+    path('', include('users.urls')), #Login, cadastro, perfil, logout, editar perfil
+    path('', include('books.urls')), #Livros dinâmicos
     path('minha-lista', minha_lista, name='minha_lista'),
     
 ]

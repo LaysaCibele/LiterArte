@@ -35,14 +35,25 @@
             <h2 class="TituloSecao">Livros em destaque</h2>
 
             <div class="ListaLivros">
-                 <article class="CardLivro">
-                    <div class="ImagemLivro"><a href="{% url 'DomCasmurro' %}"> <img src="{% static 'img/DomCasmurro.png' %}"></a> </div>
+                
+                {% for livro in livros %}
+                <article class="CardLivro">
+                    <div class="ImagemLivro">
+                        <a href="{% url 'detalhe_livro' livro.id %}">
+                            {% if livro.capa %}
+                                <img src="{{ livro.capa.url }}" alt="{{ livro.titulo }}">
+                            {% else %}
+                                <img src="{% static 'img/capa_padrao.png' %}">
+                            {% endif %}
+                        </a>
+                    </div>
 
                     <div class="InfoLivro">
-                        <h2 class="TituloLivro">Dom Casmurro</h2>
-                        <p class="AutorLivro">Machado de Assis</p>
+                        <h2 class="TituloLivro">{{ livro.titulo }}</h2>
+                        <p class="AutorLivro">{{ livro.autor.nome }}</p>
                     </div>
                 </article>
+                {% endfor %}
 
             </div>
         </section>

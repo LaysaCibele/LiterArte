@@ -73,7 +73,7 @@ def editar_perfil(request):
             user.first_name = novo_nome
             user.save()
             
-            messages.success(request, 'Perfil atualizado com sucesso!')
+            
             return redirect('meu_perfil')
             
     else:
