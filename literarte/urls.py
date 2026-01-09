@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from core.views import index, cadastro, DomCasmurro, editar_perfil, login, meu_perfil, minha_lista
 from django.conf import settings
 from django.conf.urls.static import static
@@ -23,7 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('cadastro/', cadastro, name='cadastro'),
+    path('', include('users.urls')),
+    #path('cadastro/', cadastro, name='cadastro'), essa era a antiga rota de cadastro
     path('DomCasmurro/', DomCasmurro, name='DomCasmurro'),
     path('editar-perfil/', editar_perfil, name='editar_perfil' ),
     path('login/', login, name='login'),

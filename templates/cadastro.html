@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,26 +14,31 @@
         <section class="CardCadastro">
             <h1 class="TituloCadastro">Criar conta</h1>
 
-            <form class="FormularioCadastro">
+            <form class="FormularioCadastro" method="POST">
+                {% csrf_token %} {% if form.non_field_errors %}
+                    <div class="erro">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}   
 
                 <div class="GrupoCampo">
                     <label>Nome</label>
-                    <input type="text" class="CampoNome">
+                    {{ form.nome }} {{ form.nome.errors }}
                 </div>
 
                 <div class="GrupoCampo">
                     <label>Email</label>
-                    <input type="email" class="CampoEmail">
+                    {{ form.email }} {{ form.email.errors }}
                 </div>
 
                 <div class="GrupoCampo">
                     <label>Senha</label>
-                    <input type="password" class="CampoSenha">
+                    {{ form.senha }} {{ form.senha.errors }}
                 </div>
 
                 <div class="GrupoCampo">
                     <label>Confirmar Senha</label>
-                    <input type="password" class="CampoConfirmarSenha">
+                    {{ form.confirmar_senha }} {{ form.confirmar_senha.errors }}
                 </div>
 
                 <button class="BotaoCadastro">Cadastrar</button>
