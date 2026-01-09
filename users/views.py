@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import CadastroForm
 from .models import Perfil
+from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 
@@ -26,5 +28,26 @@ def cadastro(request):
         
     else:
         form = CadastroForm()
-
+        
     return render(request, 'cadastro.html', {'form': form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            auth_login(request, user)
+            messages.success(request, f'Bem-vindo(a), {user.first_name}!')
+            return redirect('index')
+        else:
+            messages.error(request, 'Usuário ou senha inválidos.')
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'login.html', {'form': form})
+
+def logout_view(request):
+    auth_logout(request)
+    messages.info(request, 'Você saiu da conta.')
+    return redirect('login')
