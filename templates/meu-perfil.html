@@ -31,7 +31,7 @@
 
             <div class="InfoPerfilTopo">
                 <h1>Meu Perfil</h1>
-                <p class="EmailUsuario">laysa@gmail.com</p>
+                <p class="EmailUsuario">{{ user.email }}</p>
             </div>
         </header>
 
@@ -39,22 +39,22 @@
 
             <div class="CampoPerfil">
                 <span class="LabelPerfil">Nome</span>
-                <span class="ValorPerfil">Laysa</span>
+                <span class="ValorPerfil">{{ user.first_name }}</span>
             </div>
 
             <div class="CampoPerfil">
                 <span class="LabelPerfil">Livro Preferido</span>
-                <span class="ValorPerfil">Não informado</span>
+                <span class="ValorPerfil">{{ user.perfil.livro_favorito|default:"Não informado." }}</span>
             </div>
 
             <div class="CampoPerfil">
                 <span class="LabelPerfil">Gêneros Favoritos</span>
-                <span class="ValorPerfil">Não informado</span>
+                <span class="ValorPerfil">{{ user.perfil.generos_favoritos|default:"Não informado" }}</span>
             </div>
 
             <div class="CampoPerfil">
                 <span class="LabelPerfil">Autores Favoritos</span>
-                <span class="ValorPerfil">Não informado</span>
+                <span class="ValorPerfil">{{ user.perfil.autores_favoritos|default:"Não informado" }}</span>
             </div>
 
         </div>

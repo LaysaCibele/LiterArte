@@ -5,6 +5,7 @@ from .forms import CadastroForm
 from .models import Perfil
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -51,3 +52,9 @@ def logout_view(request):
     auth_logout(request)
     messages.info(request, 'Você saiu da conta.')
     return redirect('login')
+
+
+
+@login_required
+def meu_perfil(request):
+    return render(request, 'meu-perfil.html')
