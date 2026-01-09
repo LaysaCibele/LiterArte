@@ -31,30 +31,32 @@
             <h1>Editar Perfil</h1>
         </header>
 
-        <form class="FormularioPerfil">
-
+        <form class="FormularioPerfil" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
             <label>
                 Nome
-                <input type="text" value="Laysa">
+                <input type="text" name="nome" value="{{ user.first_name }}">
             </label>
 
             <label>
                 Livro Preferido
-                <input type="text" placeholder="Ex: Dom Casmurro">
+                {{ form.livro_favorito }}
             </label>
 
             <label>
                 Gêneros Favoritos
-                <input type="text" placeholder="Romance, Ficção, Drama">
+                {{ form.generos_favoritos }}
             </label>
 
             <label>
                 Autores Favoritos
-                <input type="text" placeholder="Machado de Assis, Clarice Lispector">
+                {{ form.autores_favoritos }}
             </label>
 
             <div class="AcoesFormulario">
-                <a href="{% url 'meu_perfil' %}" class="BotaoPrimario">Salvar</a>
+                <button type="submit" class="BotaoPrimario">Salvar</button>
+                
                 <a href="{% url 'meu_perfil' %}" class="BotaoSecundario">Cancelar</a>
             </div>
 

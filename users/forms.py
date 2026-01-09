@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import Perfil
 
 class CadastroForm(forms.Form):
     nome = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'CampoNome', 'placeholder': 'Seu nome'}))
@@ -23,3 +24,15 @@ class CadastroForm(forms.Form):
              raise forms.ValidationError("Este usuário já existe.")
 
         return cleaned_data
+    
+    
+    
+class PerfilForm(forms.ModelForm):
+    class Meta:
+        model = Perfil
+        fields = ['livro_favorito', 'generos_favoritos', 'autores_favoritos']
+        widgets = {
+            'livro_favorito': forms.TextInput(attrs={'placeholder': 'Ex: Dom Casmurro'}),
+            'generos_favoritos': forms.TextInput(attrs={'placeholder': 'Romance, Ficção...'}),
+            'autores_favoritos': forms.TextInput(attrs={'placeholder': 'Machado de Assis, Clarice Lispector...'}),
+        }

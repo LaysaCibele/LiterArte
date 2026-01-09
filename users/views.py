@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import CadastroForm
+from .forms import CadastroForm, PerfilForm
 from .models import Perfil
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
@@ -58,3 +58,25 @@ def logout_view(request):
 @login_required
 def meu_perfil(request):
     return render(request, 'meu-perfil.html')
+
+
+@login_required
+def editar_perfil(request):
+    perfil = request.user.perfil
+    
+    if request.method == 'POST':
+        form = PerfilForm(request.POST, request.FILES, instance=perfil)
+        novo_nome = request.POST.get('nome') 
+        if form.is_valid():
+            form.save()
+            user = request.user
+            user.first_name = novo_nome
+            user.save()
+            
+            messages.success(request, 'Perfil atualizado com sucesso!')
+            return redirect('meu_perfil')
+            
+    else:
+        form = PerfilForm(instance=perfil)
+
+    return render(request, 'editar-perfil.html', {'form': form})
