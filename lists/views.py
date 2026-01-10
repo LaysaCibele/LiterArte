@@ -15,12 +15,12 @@ def adicionar_na_lista(request, livro_id):
         defaults={'status': 'QUERO_LER'}
     )
     
-    if created:
-        messages.success(request, f'{livro.titulo} adicionado à sua lista!')
-    else:
-        messages.info(request, f'{livro.titulo} já está na sua lista.')
+    #if created:
+        #messages.success(request, f'{livro.titulo} adicionado à sua lista!')
+    #else:
+    #    messages.info(request, f'{livro.titulo} já está na sua lista.')
     
-    return redirect('minha_lista')
+    #return redirect('minha_lista')
 
 @login_required(login_url='login')
 def pagina_minha_lista(request):
