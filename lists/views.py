@@ -27,3 +27,19 @@ def pagina_minha_lista(request):
     itens = ListaLeitura.objects.filter(usuario=request.user)
     return render(request, 'minha-lista.html', {'itens': itens})
 
+
+
+@login_required
+def atualizar_status(request, item_id):
+    item = get_object_or_404(ListaLeitura, pk=item_id, usuario=request.user)
+    
+    if request.method == 'POST':
+        novo_status = request.POST.get('novo_status')
+        
+        if novo_status in ['QUERO_LER', 'LENDO', 'LIDO']:
+            item.status = novo_status
+            item.save()
+            messages.success(request, 'Status atualizado com sucesso!')
+        
+    return redirect('minha_lista')
+

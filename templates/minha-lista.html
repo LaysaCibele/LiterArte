@@ -14,11 +14,12 @@
         <div class="LogoSite"><a href="{% url 'index' %}" class="LogoSite">LiterArte</a></div>
         
         <nav class="MenuHamburguer">
-             <ul class="ListaMenu">
-                <li><a href="{% url 'index' %}">Início</a></li>
-                <li><a href="{% url 'meu_perfil' %}">Meu Perfil</a></li>
-                <li><a href="{% url 'minha_lista' %}">Minha Lista</a></li>
-                <li><a href="{% url 'logout' %}">Sair</a></li>
+            <button class="botaoBurguer"><img src="{% static 'icones/menuBLack.png' %}"></button>
+            <ul class="ListaMenu">
+                <li><a href="{% url 'index' %}"><img src="{% static 'icones/botao-de-inicio.png' %}">Início</a></li>
+                <li><a href="{% url 'meu_perfil' %}"> <img src="{% static 'icones/perfil.png' %}"> Meu Perfil</a></li>
+                <li><a href="{% url 'minha_lista' %}"> <img src="{% static 'icones/pilha-de-livros.png' %}"> Minha Lista</a></li>
+                <li><a href="{% url 'login' %}"> <img src="{% static 'icones/sair.png' %}"> Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -45,9 +46,22 @@
                         <h2 class="TituloLivro">{{ item.livro.titulo }}</h2>
                         <p class="AutorLivro">{{ item.livro.autor.nome }}</p>
                         
-                        <span class="status-badge status-{{ item.status }}">
-                            {{ item.get_status_display }}
-                        </span>
+                        <form action="{% url 'atualizar_status' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <select name="novo_status" onchange="this.form.submit()" class="select-status status-{{ item.status }}">
+                                <option value="QUERO_LER" {% if item.status == 'QUERO_LER' %}selected{% endif %}>
+                                    Quero Ler
+                                </option>
+                                <option value="LENDO" {% if item.status == 'LENDO' %}selected{% endif %}>
+                                    Lendo
+                                </option>
+                                <option value="LIDO" {% if item.status == 'LIDO' %}selected{% endif %}>
+                                    Lido
+                                </option>
+        
+                            </select>
+                        </form>    
+
                     </div>
                 </article>
                 
@@ -63,8 +77,11 @@
     </main>
 
     <footer class="RodapePrincipal">
-        <p>© 2026 — LiterArte</p>
+        <p>© 2026 — LiterArte - Todos os direitos reservados.</p>
+        <p>Desenvolvido com 💜 para amantes da literatura.</p>
     </footer>
+
+    <script src="{% static 'scripts/scripts.js' %}"></script>
 
 </body>
 </html>
