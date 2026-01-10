@@ -100,3 +100,9 @@
         var(--RoxoMedio)
     );
 }
+
+.btn-remover:hover {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border-color: #ef9a9a;
+}

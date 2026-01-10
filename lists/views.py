@@ -39,7 +39,15 @@ def atualizar_status(request, item_id):
         if novo_status in ['QUERO_LER', 'LENDO', 'LIDO']:
             item.status = novo_status
             item.save()
-            messages.success(request, 'Status atualizado com sucesso!')
+            #messages.success(request, 'Status atualizado com sucesso!')
         
+    return redirect('minha_lista')
+
+@login_required
+def remover_da_lista(request, item_id):
+    item = get_object_or_404(ListaLeitura, pk=item_id, usuario=request.user)
+    titulo = item.livro.titulo
+    item.delete()
+    #messages.success(request, f'"{titulo}" foi removido da sua lista.')
     return redirect('minha_lista')
 

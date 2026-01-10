@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>LiterArte | Minha Lista</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/minha-lista.css' %}"> 
     <link rel="icon" href="{% static 'icones/favicon/favicon.ico' %}" type="image/x-icon">
 </head>
@@ -58,9 +57,14 @@
                                 <option value="LIDO" {% if item.status == 'LIDO' %}selected{% endif %}>
                                     Lido
                                 </option>
-        
                             </select>
                         </form>    
+
+                        <a href="{% url 'remover_da_lista' item.id %}" 
+                        class="btn-remover"
+                        onclick="return confirm('Tem certeza que deseja remover este livro da lista?')">
+                        Remover
+                        </a>
 
                     </div>
                 </article>
