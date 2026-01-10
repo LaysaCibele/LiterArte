@@ -85,13 +85,14 @@
             box-shadow: 0 10px 40px var(--sombra);
             margin-bottom: 3rem;
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: minmax(0, 300px) 1fr;
             gap: 3rem;
         }
 
         .livro-capa-grande img {
-            width: 300px;
-            height: 370px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             background: linear-gradient(135deg, var(--roxo-muito-claro) 0%, var(--roxo-claro) 100%);
             border-radius: 15px;
             display: flex;
@@ -266,56 +267,24 @@
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
 
     .livro-hero {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 25px;
+        gap: 2rem;
     }
 
     .livro-capa-grande {
-        width: 200px;
-        height: auto;
-    }
-
-    .livro-capa-grande img {
-        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .livro-detalhes {
-        width: 100%;
-    }
-
-    .livro-titulo-principal {
-        font-size: 1.8rem;
-    }
-
-    .livro-meta {
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin: 20px 0;
-    }
-
-    .autor-info {
-        flex-direction: column;
         align-items: center;
-        text-align: center;
-    }
-
-    .autor-foto {
-        margin-bottom: 15px;
     }
 
     .btn-adicionar-lista {
         width: 100%;
-        display: block;
-        text-align: center;
-        margin-bottom: 25px;
-        padding: 15px;
+        justify-content: center;
     }
 }
