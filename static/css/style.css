@@ -201,3 +201,56 @@ body {
     padding: 16px;
     margin-top: 48px;
 }
+
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1024px) {
+    .ListaLivros {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .CabecalhoPrincipal {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .ListaMenu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .ListaMenu li a {
+        font-size: 0.9rem;
+    }
+
+    .botaoBurguer {
+        display: none;
+    }
+
+    .FraseLiteraria {
+        font-size: 1rem;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .ListaLivros {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .CardLivro {
+        width: 100%;
+        max-width: 100%;
+    }
+}

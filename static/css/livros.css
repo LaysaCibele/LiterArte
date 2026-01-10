@@ -241,77 +241,7 @@
             margin-bottom: 1rem;
         }
 
-        /* CONTEXTO HISTÓRICO */
-        .contexto-timeline {
-            background: var(--roxo-pastel);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            border-left: 4px solid var(--roxo-medio);
-        }
-
-        /* RECOMENDAÇÕES */
-        .recomendacoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .recomendacao-card {
-            background: var(--roxo-pastel);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .recomendacao-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px var(--sombra);
-        }
-
-        .recomendacao-tipo {
-            display: inline-block;
-            background: var(--roxo-medio);
-            color: var(--branco);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .recomendacao-titulo {
-            font-size: 1.3rem;
-            color: var(--roxo-escuro);
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-        }
-
-        .recomendacao-descricao {
-            font-size: 1rem;
-            color: var(--texto-escuro);
-            line-height: 1.6;
-        }
-
-        /* ANÁLISE CRÍTICA */
-        .citacao {
-            background: linear-gradient(135deg, var(--roxo-pastel) 0%, var(--branco) 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--roxo-claro);
-            font-style: italic;
-            position: relative;
-        }
-
-        .citacao::before {
-            font-size: 4rem;
-            color: var(--roxo-muito-claro);
-            position: absolute;
-            top: -0.5rem;
-            left: 1rem;
-        }
+       
 
 /* Rodapé*/
 .RodapePrincipal {
@@ -320,4 +250,72 @@
     text-align: center;
     padding: 16px;
     margin-top: 48px;
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+    
+    .livro-hero {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .livro-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .livro-capa-grande {
+        width: 200px;
+        height: auto;
+    }
+
+    .livro-capa-grande img {
+        width: 100%;
+    }
+
+    .livro-detalhes {
+        width: 100%;
+    }
+
+    .livro-titulo-principal {
+        font-size: 1.8rem;
+    }
+
+    .livro-meta {
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+    .autor-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .autor-foto {
+        margin-bottom: 15px;
+    }
+
+    .btn-adicionar-lista {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 15px;
+    }
 }
