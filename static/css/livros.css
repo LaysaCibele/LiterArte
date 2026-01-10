@@ -209,25 +209,27 @@
         /* SOBRE O AUTOR */
         .autor-info {
             display: grid;
-            grid-template-columns: 150px 1fr;
+            grid-template-columns: minmax(0, 160px) 1fr;
             gap: 2rem;
             align-items: start;
         }
 
-        .autor-foto img {
-            width: 160px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--roxo-muito-claro) 0%, var(--roxo-claro) 100%);
+        .autor-foto{
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            box-shadow: 0 5px 20px var(--sombra);
+        }
+
+        .autor-foto img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+           object-fit: cover;
+           background: linear-gradient(135deg, var(--roxo-muito-claro) 0%, var(--roxo-claro) 100%);
+           box-shadow: 0 5px 20px var(--sombra);
         }
 
         .autor-detalhes {
-            flex: 1;
+            min-width: 0;
         }
 
         .autor-nome {
@@ -287,4 +289,23 @@
         width: 100%;
         justify-content: center;
     }
+}
+
+@media (max-width: 768px) {
+
+    .autor-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .autor-foto img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .autor-detalhes .secao-conteudo {
+        text-align: justify;
+    }
+
 }
