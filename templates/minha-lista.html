@@ -4,83 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <title>LiterArte | Minha Lista</title>
-    <link rel="stylesheet" href="{% static 'css/minha-lista.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/minha-lista.css' %}"> 
     <link rel="icon" href="{% static 'icones/favicon/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
 
     <header class="CabecalhoPrincipal">
         <div class="LogoSite"><a href="{% url 'index' %}" class="LogoSite">LiterArte</a></div>
-
+        
         <nav class="MenuHamburguer">
-            <button class="botaoBurguer"><img src="{% static 'icones/menuBLack.png' %}"></button>
-            <ul class="ListaMenu">
-                <li><a href="{% url 'index' %}"><img src="{% static 'icones/botao-de-inicio.png' %}">Início</a></li>
-                <li><a href="{% url 'meu_perfil' %}"> <img src="{% static 'icones/perfil.png' %}"> Meu Perfil</a></li>
-                <li><a href="{% url 'minha_lista' %}"> <img src="{% static 'icones/pilha-de-livros.png' %}"> Minha Lista</a></li>
-                <li><a href="{% url 'login' %}"> <img src="{% static 'icones/sair.png' %}"> Sair</a></li>
+             <ul class="ListaMenu">
+                <li><a href="{% url 'index' %}">Início</a></li>
+                <li><a href="{% url 'meu_perfil' %}">Meu Perfil</a></li>
+                <li><a href="{% url 'minha_lista' %}">Minha Lista</a></li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
             </ul>
         </nav>
     </header>
 
-    
-
     <main class="ConteudoPrincipal">
-        <h1 class="TituloSecao">Minha Lista de Leitura</h1>
-        <section class="ListaLeitura">
+        <section class="SecaoLivros">
+            <h2 class="TituloSecao">Minha Lista de Leitura</h2>
 
-        <article class="CardListaLivro">
-            <div class="CapaLivro"></div>
+            <div class="ListaLivros">
+                
+                {% for item in itens %}
+                <article class="CardLivro">
+                    <div class="ImagemLivro">
+                        <a href="{% url 'detalhe_livro' item.livro.id %}"> 
+                            {% if item.livro.capa %}
+                                <img src="{{ item.livro.capa.url }}" alt="{{ item.livro.titulo }}">
+                            {% else %}
+                                <img src="{% static 'img/capa_padrao.png' %}">
+                            {% endif %}
+                        </a>
+                    </div>
 
-            <div class="InfoListaLivro">
-                <h2>Dom Casmurro</h2>
-                <p class="Autor">Machado de Assis</p>
-
-                <select class="StatusLeitura">
-                    <option>Quero Ler</option>
-                    <option>Lendo</option>
-                    <option selected>Lido</option>
-                </select>
-
-                <textarea placeholder="Adicione suas anotações..."></textarea>
-
-                <div class="AcoesLivro">
-                    <button class="Salvar">Salvar</button>
-                    <button class="Cancelar">Cancelar</button>
+                    <div class="InfoLivro">
+                        <h2 class="TituloLivro">{{ item.livro.titulo }}</h2>
+                        <p class="AutorLivro">{{ item.livro.autor.nome }}</p>
+                        
+                        <span class="status-badge status-{{ item.status }}">
+                            {{ item.get_status_display }}
+                        </span>
+                    </div>
+                </article>
+                
+                {% empty %}
+                <div class="lista-vazia">
+                    <p>Sua lista está vazia!</p>
+                    <a href="{% url 'index' %}" class="btn-voltar">Explorar livros</a>
                 </div>
+                {% endfor %}
 
-                <button class="Remover">Remover</button>
             </div>
-        </article>
-
-    </section>
-
-
-    <section class="ResumoLeitura">
-        <div class="ResumoCard">
-            <span>Quero Ler</span>
-            <strong>0</strong>
-        </div>
-
-        <div class="ResumoCard lendo">
-            <span>Lendo</span>
-            <strong>0</strong>
-        </div>
-
-        <div class="ResumoCard lido">
-            <span>Lidos</span>
-            <strong>1</strong>
-        </div>
-    </section>
-
-
+        </section>
     </main>
 
-     <footer class="RodapePrincipal">
-        <p>© 2026 — LiterArte - Todos os direitos reservados.</p>
-        <p>Desenvolvido com 💜 para amantes da literatura.</p>
+    <footer class="RodapePrincipal">
+        <p>© 2026 — LiterArte</p>
     </footer>
 
-     <script src="{% static 'scripts/scripts.js' %}"></script>
 </body>
 </html>

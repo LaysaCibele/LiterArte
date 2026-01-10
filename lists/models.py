@@ -18,12 +18,12 @@ class ListaLeitura(models.Model):
     data_atualizacao = models.DateTimeField(auto_now=True)
     
     
-class Meta:
+    class Meta:
         unique_together = ('usuario', 'livro')
         verbose_name = "Item da Lista"
         verbose_name_plural = "Itens da Lista"
         
-        def __str__(self):
+    def __str__(self):
             return f"{self.usuario.username} - {self.livro.titulo} ({self.get_status_display()})"
         
         

@@ -25,8 +25,7 @@ urlpatterns = [
     path('', index, name='index'), #Minha home
     path('', include('users.urls')), #Login, cadastro, perfil, logout, editar perfil
     path('', include('books.urls')), #Livros dinâmicos
-    path('minha-lista', minha_lista, name='minha_lista'),
-    
+    path('lista/', include('lists.urls')), #Minha lista
 ]
 
 if settings.DEBUG:
