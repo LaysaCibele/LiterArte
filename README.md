@@ -43,36 +43,30 @@ Para executar este projeto localmente, você precisará ter instalado em sua má
 
 ## Como Executar o Projeto Localmente
   1. Baixe o código na sua máquina. Abra o terminal e faça:
-      '''bash
             git clone https://github.com/LaysaCibele/LiterArte.git
             cd literarte
 
   2. Crie o Ambiente Virtual (VENV):
-        '''bash
              python -m venv venv
+     
       2.1 Ative o venv:
-          '''bash
                venv\Scripts\activate
      2.1.1: Caso esteja no Linux/Mac
-           '''bash
                  source venv/bin/activate
 
-   3. Instale as dependências:
-            '''bash
+   4. Instale as dependências:
                   pip install -r requirements.txt
             
-   4. Configure o Banco de Dados:
-              '''bash
+   5. Configure o Banco de Dados:
                     python manage.py runserver
 
-   5. Crie um superusuário para acessar a área de administrador (adicionar livros, usuários, autores, gêneros)
-        - ps.: ao criar um superusuário, quando você digitar a senha, por padrão do django, no terminal, não serão exibidos pontos (.....)  nem (******), o campo fica invisível.
-               '''bash
+   6. Crie um superusuário para acessar a área de administrador (adicionar livros, usuários, autores, gêneros):
                      python manage.py createsuperuser
+      
+      - ps.: ao criar um superusuário, quando você digitar a senha, por padrão do django, no terminal, não serão exibidos pontos (.....)  nem (******), o campo fica invisível.
 
 
-   6. Rode o servidor:
-            '''bash
+   8. Rode o servidor:
                   python manage.py runserver
                         - clique no localhost que irá aparecer no seu terminal.
 
