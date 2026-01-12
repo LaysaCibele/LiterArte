@@ -76,6 +76,8 @@ Para executar este projeto localmente, você precisará ter instalado em sua má
 
 
 
+Essa versão atual é o MVP do LiterArte, mas pretendo trazer mais atualizações e  corrigir alguns erros identificados. Como por exemplo: o erro ao aicionar um livro na lista. O livro é encaminhado para a lista, mas antes, abre uma tela de erro, forçando o usuário a voltar, na seta do navegador, para continuar a navegação no site. Mas a funcionalidade em si está OK.
+
 
 Laysa Cibele - Estudante do 3° período de Ciência da Computação [GitHub: https://github.com/LaysaCibele]
 
