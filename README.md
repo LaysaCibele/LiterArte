@@ -29,11 +29,9 @@ O projeto foca na aplicação de conceitos fundamentais de desenvolvimento web, 
 
 ### Banco de Dados
 * **SQLite**: Utilizado em ambiente de desenvolvimento.
-* **PostgreSQL**: Utilizado em ambiente de produção (Render).
 
 ### Infraestrutura e Deploy
 * **Git**: Controle de versão.
-* **Render**: Plataforma de hospedagem em nuvem.
 
 ## Pré-requisitos
 
@@ -78,7 +76,7 @@ Para executar este projeto localmente, você precisará ter instalado em sua má
 
 
 Para conseguir testar as funcionalidades do projeto, é necessário que você entre no menu de admin e adicione ao menos dois livros através do menu.
-Essa versão atual é o MVP do LiterArte, mas pretendo trazer mais atualizações e  corrigir alguns erros identificados. Como por exemplo: o erro ao aicionar um livro na lista. O livro é encaminhado para a lista, mas antes, abre uma tela de erro, forçando o usuário a voltar, na seta do navegador, para continuar a navegação no site. Mas a funcionalidade em si está OK.
+Essa versão atual é o MVP do LiterArte, mas pretendo trazer mais atualizações e  corrigir alguns erros identificados.
 
 
 Laysa Cibele - Estudante do 3° período de Ciência da Computação [GitHub: https://github.com/LaysaCibele]
